@@ -2,34 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Awesome Web Page</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            margin: 40px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #007bff;
-        }
-
-        p {
-            font-size: 1.2em;
-        }
-
-        footer {
-            margin-top: 20px;
-            color: #777;
-        }
-    </style>
+    <title>Car Dealership</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to the Awesome Web Page!</h1>
-    <p>Explore and enjoy your time on this fantastic journey through the web.</p>
-    <footer>Created with ❤️ by Your Name</footer>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <div id="models">
+        <h2>Available Car Models</h2>
+        <ul id="modelList"></ul>
+    </div>
+    <div id="cars" style="display:none;">
+        <h2>Available Cars</h2>
+        <ul id="carList"></ul>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>

@@ -43,13 +43,18 @@
     </table>
 </div>
 
+
 <script>
-        // Функция для открытия второй страницы
-        function openCarListPage(model) {
-            // Используем tg.app.open() для открытия новой страницы в телеграме
-            tg.app.open('second_page.html?model=' + model);
-        }
-    </script>
+    var BackButton = WebApp.BackButton;
+    BackButton.show();
+
+    BackButton.onClick(function() {
+        WebApp.showAlert("Нет пути назад!");
+        BackButton.hide();
+        // Программное перенаправление на другую страницу
+        window.location.href = "index.html";
+    });
+</script>
 
 
 

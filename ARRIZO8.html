@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Dealership</title>
+    <title>ARRIZO8</title>
 </head>
 
 <style>
@@ -21,12 +20,22 @@
 </style>
 
 <body style="background-color: #bdbab5; font-family: Arial, sans-serif;">
-
 <div class="back-button" onclick="goBack()">Назад</div>
 <script>
     function goBack() {
         history.back();
     }
+</script>
+
+<script>
+        var backButton = WebApp.BackButton;
+
+        backButton.show();
+
+        backButton.onClick(function() {
+            // Используем JavaScript для перехода назад в истории браузера
+            window.history.back();
+        });
 </script>
 
 <div style="margin: 10px;">
@@ -42,21 +51,6 @@
         </tr>
     </table>
 </div>
-
-
-<script>
-    var BackButton = WebApp.BackButton;
-    BackButton.show();
-
-    BackButton.onClick(function() {
-        WebApp.showAlert("Нет пути назад!");
-        BackButton.hide();
-        // Программное перенаправление на другую страницу
-        window.location.href = "index.html";
-    });
-</script>
-
-
 
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>

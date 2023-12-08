@@ -15,7 +15,7 @@
         background-color: #fff;
         padding: 10px;
         border: 1px solid #ccc;
-        border-radius: 5px;
+        border-radius: 8px;
         cursor: pointer;
     }
 </style>
@@ -43,83 +43,16 @@
     </table>
 </div>
 
-<div style="margin: 10px;">
-    <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;">
-        <tr>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <img src="photos/TIGGO4 PRO.jpg" alt="Car Image" style="max-width: 100%; border-radius: 8px;">
-            </td>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <p>TIGGO4 PRO</p>
-            </td>
-        </tr>
-    </table>
-</div>
+<script>
+        // Функция для открытия второй страницы
+        function openCarListPage(model) {
+            // Используем tg.app.open() для открытия новой страницы в телеграме
+            tg.app.open('second_page.html?model=' + model);
+        }
+    </script>
 
-<div style="margin: 10px;">
-    <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;">
-        <tr>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <img src="photos/TIGGO7 PRO.jpg" alt="Car Image" style="max-width: 100%; border-radius: 8px;">
-            </td>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <p>TIGGO7 PRO</p>
-            </td>
-        </tr>
-    </table>
-</div>
 
-<div style="margin: 10px;">
-    <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;">
-        <tr>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <img src="photos/TIGGO7 PRO MAX.jpg" alt="Car Image" style="max-width: 100%; border-radius: 8px;">
-            </td>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <p>TIGGO7 PRO MAX</p>
-            </td>
-        </tr>
-    </table>
-</div>
 
-<div style="margin: 10px;">
-    <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;">
-        <tr>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <img src="photos/TIGGO8.jpg" alt="Car Image" style="max-width: 100%; border-radius: 8px;">
-            </td>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <p>TIGGO8</p>
-            </td>
-        </tr>
-    </table>
-</div>
-
-<div style="margin: 10px;">
-    <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;">
-        <tr>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <img src="photos/TIGGO8 PRO.jpg" alt="Car Image" style="max-width: 100%; border-radius: 8px;">
-            </td>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <p>TIGGO8 PRO</p>
-            </td>
-        </tr>
-    </table>
-</div>
-
-<div style="margin: 10px;">
-    <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;">
-        <tr>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <img src="photos/TIGGO8 PRO MAX NEW.jpg" alt="Car Image" style="max-width: 100%; border-radius: 8px;">
-            </td>
-            <td style="width: 50%; padding: 15px; text-align: center; vertical-align: middle;">
-                <p>TIGGO8 PRO MAX NEW</p>
-            </td>
-        </tr>
-    </table>
-</div>
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </body>

@@ -28,15 +28,16 @@
 </script>
 
 <script>
-        var backButton = WebApp.BackButton;
+    var backButton = WebApp.BackButton;
 
-        backButton.show();
+    backButton.show();
 
-        backButton.onClick(function() {
-            // Используем JavaScript для перехода назад в истории браузера
-            window.history.back();
-        });
+    backButton.onClick(function() {
+        // Используйте Telegram API для перехода назад
+        WebApp.goBack();
+    });
 </script>
+
 
 <div style="margin: 10px;">
     <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;"

@@ -172,18 +172,18 @@
     </div>
 
     <script>
-        function submitApplication() {
-            // Получение данных
-            var engine = document.querySelector("#myModal1 td:nth-child(2)").innerText;
-            var transmission = document.querySelector("#myModal1 td:nth-child(4)").innerText;
-            var drive = document.querySelector("#myModal1 td:nth-child(6)").innerText;
-            var trim = document.querySelector("#myModal1 td:nth-child(8)").innerText;
-            var color = document.querySelector("#myModal1 td:nth-child(10)").innerText;
-            var vin = document.querySelector("#myModal1 td:nth-child(12)").innerText;
-            var price = document.querySelector("#myModal1 p:last-child").innerText;
+    function submitApplication() {
+        // Получение данных
+        var engine = document.querySelector("#myModal1 td:nth-child(2)").innerText;
+        var transmission = document.querySelector("#myModal1 td:nth-child(4)").innerText;
+        var drive = document.querySelector("#myModal1 td:nth-child(6)").innerText;
+        var trim = document.querySelector("#myModal1 td:nth-child(8)").innerText;
+        var color = document.querySelector("#myModal1 td:nth-child(10)").innerText;
+        var vin = document.querySelector("#myModal1 td:nth-child(12)").innerText;
+        var price = document.querySelector("#myModal1 p:last-child").innerText;
 
-            // Формирование сообщения
-            var message = `
+        // Формирование сообщения
+        var message = `
             Новая заявка!
             Двигатель: ${engine}
             Трансмиссия: ${transmission}
@@ -194,42 +194,40 @@
             Цена: ${price}
         `;
 
-            // Отправка данных через Telegram Bot API
-            sendToTelegramBot(message);
-        }
+        // Отправка данных через Telegram Bot API
+        sendToTelegramBot(message);
+    }
 
-        function sendToTelegramBot(message) {
-            // Замените YOUR_BOT_TOKEN и YOUR_CHAT_ID на реальные значения
-            var botToken = '6922972034:AAHRY5dZQ7w4pA3P0ZIn80rs9JqE3oN4FrU';
-            var chatId = '723280958';
+    function sendToTelegramBot(message) {
+        // Замените YOUR_BOT_TOKEN и YOUR_CHAT_ID на реальные значения
+        var botToken = '6922972034:AAHRY5dZQ7w4pA3P0ZIn80rs9JqE3oN4FrU';
+        var chatId = '723280958';
 
-            // Формирование URL для отправки запроса к Telegram Bot API
-            var apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        // Формирование URL для отправки запроса к Telegram Bot API
+        var apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
-            // Формирование параметров запроса
-            var params = {
-                chat_id: chatId,
-                text: message,
-                parse_mode: 'Markdown',
-            };
+        // Формирование параметров запроса
+        var params = new URLSearchParams();
+        params.append('chat_id', chatId);
+        params.append('text', message);
 
-            // Отправка запроса к Telegram Bot API
-            fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(params),
+        // Отправка запроса к Telegram Bot API
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: params.toString(),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
             })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-        }
-    </script>
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+</script>
 
 
     <script>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRIZO8</title>
+</head>
+
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        border-radius: 10px
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    body.modal-open {
+        overflow: hidden;
+    }
+</style>
+
+<style>
+    .back {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .back:visited {
+        color: #000;
+    }
+</style>
+
+<body style="background-color: #bdbab5; font-family: Arial, sans-serif;">
+
+<div style="margin: 10px;">
+    <a href="../index.html" class="back">
+        <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px; ">
+            <tr>
+                <td style="width: 50%; text-align: center; vertical-align: middle;">
+                    <p>Назад</p>
+                </td>
+            </tr>
+        </table>
+    </a>
+</div>
+
+<div>
+    <div style="margin: 10px;">
+        <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;"
+               onclick="openCarListPage('TIGGO4 PRO')">
+            <tr>
+                <td colspan="2" style="width: 50%; text-align: left; vertical-align: middle;">
+                    <table style="background-color: red; border-radius: 50px; margin-left: 15px; margin-top: 30px;">
+                        <tr>
+                            <td colspan="2"
+                                style="width: 80%; text-align: center; vertical-align: middle; padding: 2px;">
+                                <p style="color: white; font-weight: bold; font-size: 7px; letter-spacing: 2px; margin: 0;">
+                                    Trade-in</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 50%; text-align: center; vertical-align: middle;">
+                    <img src="../photos/TIGGO4 PRO/TIGGO4 PRO - Искрящийся белый.png" alt="Car Image"
+                         style="max-width: 100%; border-radius: 8px;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 50%; padding: 15px; text-align: left; vertical-align: middle;">
+                    <p style="padding-left: 25px; font-weight: bold;">TIGGO4 PRO</p>
+                    <p style="padding-left: 25px">1.5 CVT Action, 2023</p>
+                    <p style="padding-left: 25px">LVVDB21B*PC****82</p>
+                </td>
+            </tr>
+            <tr style="margin-top: 0px;">
+                <td style="width: 50%; padding: 15px; text-align: left; vertical-align: middle;">
+                    <p style="padding-left: 25px; font-weight: bold;">2 220 000 Р</p>
+                </td>
+                <td style="width: 50%; padding-right: 15px; text-align: right; vertical-align: middle;">
+                    <p style="padding-left: 30px; cursor: pointer; font-size: 13px;" onclick="openModal('myModal1')">
+                        Подробней
+                        →</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="myModal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModal1')">&times;</span>
+            <br><br>
+            <div style="margin-top: 20px;">
+                <table style="border-collapse: collapse; width: 50%; margin: auto;">
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Двигатель</td>
+                        <td style="text-align: left; padding: 10px;">1.5</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Трансмиссия</td>
+                        <td style="text-align: left; padding: 10px;">Вариатор</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Привод</td>
+                        <td style="text-align: left; padding: 10px;">Передний привод</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Комплектация</td>
+                        <td style="text-align: left; padding: 10px;">1.5 CVT Action</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Цвет</td>
+                        <td style="text-align: left; padding: 10px;">Искрящийся белый</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">VIN</td>
+                        <td style="text-align: left; padding: 10px;">LVVDB21B*PC****82</td>
+                    </tr>
+                    <td colspan="2">
+                        <p style="color: grey; text-align: center">Ваша цена с учетом всех выгод</p>
+                        <p style="text-align: center; font-weight: bold; font-size: 20px;">2 220 000 Р</p>
+                    </td>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+            document.body.classList.add("modal-open");
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+            document.body.classList.remove("modal-open");
+        }
+
+        var closeBtn = document.getElementsByClassName("close")[0];
+        closeBtn.onclick = function () {
+            closeModal('myModal1');
+        };
+
+        window.onclick = function (event) {
+            var modals = document.getElementsByClassName("modal");
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    var modalId = modals[i].getAttribute("id");
+                    closeModal(modalId);
+                }
+            }
+        };
+    </script>
+</div>
+
+<div>
+    <div style="margin: 10px;">
+        <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;"
+               onclick="openCarListPage('TIGGO4 PRO')">
+            <tr>
+                <td colspan="2" style="width: 50%; text-align: left; vertical-align: middle;">
+                    <table style="background-color: red; border-radius: 50px; margin-left: 15px; margin-top: 30px;">
+                        <tr>
+                            <td colspan="2"
+                                style="width: 80%; text-align: center; vertical-align: middle; padding: 2px;">
+                                <p style="color: white; font-weight: bold; font-size: 7px; letter-spacing: 2px; margin: 0;">
+                                    Trade-in</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 50%; text-align: center; vertical-align: middle;">
+                    <img src="../photos/TIGGO4 PRO/TIGGO4 PRO - Искрящийся белый.png" alt="Car Image"
+                         style="max-width: 100%; border-radius: 8px;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 50%; padding: 15px; text-align: left; vertical-align: middle;">
+                    <p style="padding-left: 25px; font-weight: bold;">TIGGO4 PRO</p>
+                    <p style="padding-left: 25px">1.5 MT Action, 2023</p>
+                    <p style="padding-left: 25px">LVVDB11B*PC****17</p>
+                </td>
+            </tr>
+            <tr style="margin-top: 0px;">
+                <td style="width: 50%; padding: 15px; text-align: left; vertical-align: middle;">
+                    <p style="padding-left: 25px; font-weight: bold;">2 120 900 Р</p>
+                </td>
+                <td style="width: 50%; padding-right: 15px; text-align: right; vertical-align: middle;">
+                    <p style="padding-left: 25px; cursor: pointer; font-size: 13px;" onclick="openModal('myModal2')">
+                        Подробней
+                        →</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="myModal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModal1')">&times;</span>
+            <br><br>
+            <div style="margin-top: 20px;">
+                <table style="border-collapse: collapse; width: 50%; margin: auto;">
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Двигатель</td>
+                        <td style="text-align: left; padding: 10px;">1.5</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Трансмиссия</td>
+                        <td style="text-align: left; padding: 10px;">МКПП</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Привод</td>
+                        <td style="text-align: left; padding: 10px;">Передний привод</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Комплектация</td>
+                        <td style="text-align: left; padding: 10px;">1.5 MT Action</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Цвет</td>
+                        <td style="text-align: left; padding: 10px;">Искрящийся белый</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">VIN</td>
+                        <td style="text-align: left; padding: 10px;">LVVDB11B*PC****17</td>
+                    </tr>
+                    <td colspan="2">
+                        <p style="color: grey; text-align: center">Ваша цена с учетом всех выгод</p>
+                        <p style="text-align: center; font-weight: bold; font-size: 20px;">2 120 000</p>
+                    </td>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var closeBtn2 = document.getElementsByClassName("close")[1];
+        closeBtn2.onclick = function () {
+            closeModal('myModal2');
+        };
+
+        window.onclick = function (event) {
+            var modals = document.getElementsByClassName("modal");
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    var modalId = modals[i].getAttribute("id");
+                    closeModal(modalId);
+                }
+            }
+        };
+    </script>
+</div>
+
+<div>
+    <div style="margin: 10px;">
+        <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;"
+               onclick="openCarListPage('TIGGO4 PRO')">
+            <tr>
+                <td colspan="2" style="width: 50%; text-align: left; vertical-align: middle;">
+                    <table style="background-color: red; border-radius: 50px; margin-left: 15px; margin-top: 30px;">
+                        <tr>
+                            <td colspan="2"
+                                style="width: 80%; text-align: center; vertical-align: middle; padding: 2px;">
+                                <p style="color: white; font-weight: bold; font-size: 7px; letter-spacing: 2px; margin: 0;">
+                                    Trade-in</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 50%; text-align: center; vertical-align: middle;">
+                    <img src="../photos/TIGGO4 PRO/TIGGO4 PRO - Искрящийся белый.png" alt="Car Image"
+                         style="max-width: 100%; border-radius: 8px;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 50%; padding: 15px; text-align: left; vertical-align: middle;">
+                    <p style="padding-left: 25px; font-weight: bold;">TIGGO4 PRO</p>
+                    <p style="padding-left: 25px">1.5T CVT Travel, 2023</p>
+                    <p style="padding-left: 25px">LVVDB21B*PD****15</p>
+                </td>
+            </tr>
+            <tr style="margin-top: 0px;">
+                <td style="width: 50%; padding: 15px; text-align: left; vertical-align: middle;">
+                    <p style="padding-left: 25px; font-weight: bold;">2 460 000 Р</p>
+                </td>
+                <td style="width: 50%; padding-right: 15px; text-align: right; vertical-align: middle;">
+                    <p style="padding-left: 25px; cursor: pointer; font-size: 13px;" onclick="openModal('myModal3')">
+                        Подробней
+                        →</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="myModal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModal1')">&times;</span>
+            <br><br>
+            <div style="margin-top: 20px;">
+                <table style="border-collapse: collapse; width: 50%; margin: auto;">
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Двигатель</td>
+                        <td style="text-align: left; padding: 10px;">-</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Трансмиссия</td>
+                        <td style="text-align: left; padding: 10px;">-</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Привод</td>
+                        <td style="text-align: left; padding: 10px;">-</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Комплектация</td>
+                        <td style="text-align: left; padding: 10px;">1.5T CVT Travel</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Цвет</td>
+                        <td style="text-align: left; padding: 10px;">Искрящийся белый</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">VIN</td>
+                        <td style="text-align: left; padding: 10px;">LVVDB21B*PD****15</td>
+                    </tr>
+                    <td colspan="2">
+                        <p style="color: grey; text-align: center">Ваша цена с учетом всех выгод</p>
+                        <p style="text-align: center; font-weight: bold; font-size: 20px;">2 460 900 Р</p>
+                    </td>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var closeBtn3 = document.getElementsByClassName("close")[2];
+        closeBtn3.onclick = function () {
+            closeModal('myModal3');
+        };
+
+        window.onclick = function (event) {
+            var modals = document.getElementsByClassName("modal");
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    var modalId = modals[i].getAttribute("id");
+                    closeModal(modalId);
+                }
+            }
+        };
+    </script>
+</div>
+
+<div>
+    <div style="margin: 10px;">
+        <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;"
+               onclick="openCarListPage('TIGGO4 PRO')">
+            <tr>
+                <td colspan="2" style="width: 50%; text-align: left; vertical-align: middle;">
+                    <table style="background-color: red; border-radius: 50px; margin-left: 15px; margin-top: 30px;">
+                        <tr>
+                            <td colspan="2"
+                                style="width: 80%; text-align: center; vertical-align: middle; padding: 2px;">
+                                <p style="color: white; font-weight: bold; font-size: 7px; letter-spacing: 2px; margin: 0;">
+                                    Trade-in</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 50%; text-align: center; vertical-align: middle;">
+                    <img src="../photos/TIGGO4 PRO/TIGGO4 PRO - Глубокий черный.png" alt="Car Image"
+                         style="max-width: 100%; border-radius: 8px;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 50%; padding: 15px; text-align: left; vertical-align: middle;">
+                    <p style="padding-left: 25px; font-weight: bold;">TIGGO4 PRO</p>
+                    <p style="padding-left: 25px">1.5T CVT Ultimate, 2023</p>
+                    <p style="padding-left: 25px">LVVDB21B*PD****59</p>
+                </td>
+            </tr>
+            <tr style="margin-top: 0px;">
+                <td style="width: 50%; padding: 15px; text-align: left; vertical-align: middle;">
+                    <p style="padding-left: 25px; font-weight: bold;">2 699 900 Р</p>
+                </td>
+                <td style="width: 50%; padding-right: 15px; text-align: right; vertical-align: middle;">
+                    <p style="padding-left: 25px; cursor: pointer; font-size: 13px;" onclick="openModal('myModal4')">
+                        Подробней
+                        →</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="myModal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('myModal1')">&times;</span>
+            <br><br>
+            <div style="margin-top: 20px;">
+                <table style="border-collapse: collapse; width: 50%; margin: auto;">
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Двигатель</td>
+                        <td style="text-align: left; padding: 10px;">1.5</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Трансмиссия</td>
+                        <td style="text-align: left; padding: 10px;">Вариатор</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Привод</td>
+                        <td style="text-align: left; padding: 10px;">Передний привод</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Комплектация</td>
+                        <td style="text-align: left; padding: 10px;">1.5T CVT Ultimate</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">Цвет</td>
+                        <td style="text-align: left; padding: 10px;">Глубокий черный</td>
+                    </tr>
+                    <td colspan="2">
+                        <div style="border-bottom: 1px solid grey;"></div>
+                    </td>
+                    <tr>
+                        <td style="text-align: left; padding: 10px;">VIN</td>
+                        <td style="text-align: left; padding: 10px;">LVVDB21B*PD****59</td>
+                    </tr>
+                    <td colspan="2">
+                        <p style="color: grey; text-align: center">Ваша цена с учетом всех выгод</p>
+                        <p style="text-align: center; font-weight: bold; font-size: 20px;">2 699 900 Р</p>
+                    </td>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var closeBtn3 = document.getElementsByClassName("close")[3];
+        closeBtn3.onclick = function () {
+            closeModal('myModal4');
+        };
+
+        window.onclick = function (event) {
+            var modals = document.getElementsByClassName("modal");
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    var modalId = modals[i].getAttribute("id");
+                    closeModal(modalId);
+                }
+            }
+        };
+    </script>
+</div>
+
+<div style="margin: 10px;">
+    <a href="../index.html" class="back">
+        <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px; ">
+            <tr>
+                <td style="width: 50%; text-align: center; vertical-align: middle;">
+                    <p>Назад</p>
+                </td>
+            </tr>
+        </table>
+    </a>
+</div>
+
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</body>
+
+</html>

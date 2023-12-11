@@ -128,35 +128,35 @@
                 <table style="border-collapse: collapse; width: 50%; margin: auto;">
                     <tr>
                         <td style="text-align: left; padding: 10px;">Двигатель</td>
-                        <td style="text-align: left; padding: 10px;">1.5</td>
+                        <td style="text-align: left; padding: 10px;"><p id="cars_engine">1.5</p></td>
                     </tr>
                     <td colspan="2">
                         <div style="border-bottom: 1px solid grey;"></div>
                     </td>
                     <tr>
                         <td style="text-align: left; padding: 10px;">Трансмиссия</td>
-                        <td style="text-align: left; padding: 10px;">Вариатор</td>
+                        <td style="text-align: left; padding: 10px;"><p id="cars_transmission">Вариатор</p></td>
                     </tr>
                     <td colspan="2">
                         <div style="border-bottom: 1px solid grey;"></div>
                     </td>
                     <tr>
                         <td style="text-align: left; padding: 10px;">Привод</td>
-                        <td style="text-align: left; padding: 10px;">Передний привод</td>
+                        <td style="text-align: left; padding: 10px;"><p id="cars_drive">Передний привод</p></td>
                     </tr>
                     <td colspan="2">
                         <div style="border-bottom: 1px solid grey;"></div>
                     </td>
                     <tr>
                         <td style="text-align: left; padding: 10px;">Комплектация</td>
-                        <td style="text-align: left; padding: 10px;">1.5T CVT Elite</td>
+                        <td style="text-align: left; padding: 10px;"><p id="cars_trim">1.5T CVT Elite</p></td>
                     </tr>
                     <td colspan="2">
                         <div style="border-bottom: 1px solid grey;"></div>
                     </td>
                     <tr>
                         <td style="text-align: left; padding: 10px;">Цвет</td>
-                        <td style="text-align: left; padding: 10px;">Стальной серый</td>
+                        <td style="text-align: left; padding: 10px;"><p id="cars_color">Стальной серый</p></td>
                     </tr>
                     <td colspan="2">
                         <div style="border-bottom: 1px solid grey;"></div>
@@ -167,7 +167,7 @@
                     </tr>
                     <td colspan="2">
                         <p style="color: grey; text-align: center">Ваша цена с учетом всех выгод</p>
-                        <p style="text-align: center; font-weight: bold; font-size: 20px;">2 570 000 Р</p>
+                        <p id="cars_price" style="text-align: center; font-weight: bold; font-size: 20px;">2 570 000 Р</p>
                     </td>
                 </table>
 
@@ -195,11 +195,29 @@
         })
 
         order.addEventListener("click", () => {
+            let engineElement  = document.getElementById("cars_engine");
+            let engine = engineElement.textContent;
+            let transmissionElement  = document.getElementById("cars_transmission");
+            let transmission = transmissionElement.textContent;
+            let driveElement  = document.getElementById("cars_drive");
+            let drive = driveElement.textContent;
+            let trimElement  = document.getElementById("cars_trim");
+            let trim = trimElement.textContent;
+            let colorElement  = document.getElementById("cars_color");
+            let color = colorElement.textContent;
             let vinElement  = document.getElementById("cars_vin");
             let vin = vinElement.textContent;
+            let priceElement  = document.getElementById("cars_price");
+            let price = priceElement.textContent;
 
             let data = {
-                VIN: vin
+                engine: engine,
+                transmission: transmission,
+                drive: drive,
+                trim: trim,
+                color: color,
+                VIN: vin,
+                price: price
             };
 
             tg.sendData(JSON.stringify(data));

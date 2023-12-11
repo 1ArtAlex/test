@@ -172,17 +172,39 @@
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        let tg = window.Telegram.WebApp;
-        let order = document.getElementById("order");
-        tg.expand();
+    let order = document.getElementById("order");
 
-        order.addEventListener("click", () => {
-            let data = {action: 'клиент хочет купить'};
+    order.addEventListener("click", () => {
+        let data = { action: 'клиент хочет купить' };
 
-            tg.sendData(JSON.stringify(data));
-            tg.close();
-        });
-    </script>
+        // Создаем объект XMLHttpRequest
+        let xhr = new XMLHttpRequest();
+
+        // Открываем POST-запрос на сервер Telegram Bot API
+        xhr.open("POST", "https://api.telegram.org/bot6922972034:AAHRY5dZQ7w4pA3P0ZIn80rs9JqE3oN4FrU/sendMessage", true);
+
+        // Устанавливаем заголовки
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+        // Обработчик события успешного завершения запроса
+        xhr.onload = function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                console.log('Успешно:', xhr.responseText);
+            } else {
+                console.error('Ошибка:', xhr.statusText);
+            }
+        };
+
+        // Обработчик события ошибки
+        xhr.onerror = function () {
+            console.error('Сетевая ошибка');
+        };
+
+        // Отправляем запрос с данными
+        xhr.send(JSON.stringify(data));
+    });
+</script>
+
 
     <script>
         function openModal(modalId) {

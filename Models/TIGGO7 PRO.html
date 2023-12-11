@@ -195,7 +195,28 @@
         })
 
         order.addEventListener("click", () => {
-            let data = {action: 'клиент хочет купить'};
+            // Получение данных из таблицы
+            var engine = document.querySelector("#modal td:nth-child(2)").innerText;
+            var transmission = document.querySelector("#modal td:nth-child(4)").innerText;
+            var drive = document.querySelector("#modal td:nth-child(6)").innerText;
+            var trim = document.querySelector("#modal td:nth-child(8)").innerText;
+            var color = document.querySelector("#modal td:nth-child(10)").innerText;
+            var vin = document.querySelector("#modal td:nth-child(12)").innerText;
+            var price = document.querySelector("#modal p:last-child").innerText;
+
+            // Формирование объекта данных
+            let data = {
+                action: 'Новая заявка',
+                Двигатель: engine,
+                Трансмиссия: transmission,
+                Привод: drive,
+                Комплектация: trim,
+                Цвет: color,
+                VIN: vin,
+                Цена: price
+            };
+
+            // Отправка данных
             tg.sendData(JSON.stringify(data));
             tg.close();
         });

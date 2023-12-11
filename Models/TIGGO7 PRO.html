@@ -173,14 +173,9 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
-        let buy = document.getElementById("buy");
         let order = document.getElementById("order");
         tg.expand();
 
-        buy.addEventListener("click", () => {
-            document.getElementById("main").style.display = "none";
-            document.getElementById("form").style.display = "block";
-        });
         order.addEventListener("click", () => {
 
             tg.sendData('клиент хочет купить');

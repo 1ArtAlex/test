@@ -195,16 +195,16 @@
         })
 
         order.addEventListener("click", () => {
-            // Получение данных из таблицы
-            var engine = document.querySelector("#modal td:nth-child(2)").innerText;
-            var transmission = document.querySelector("#modal td:nth-child(4)").innerText;
-            var drive = document.querySelector("#modal td:nth-child(6)").innerText;
-            var trim = document.querySelector("#modal td:nth-child(8)").innerText;
-            var color = document.querySelector("#modal td:nth-child(10)").innerText;
-            var vin = document.querySelector("#modal td:nth-child(12)").innerText;
-            var price = document.querySelector("#modal p:last-child").innerText;
+            // Собираем данные из таблицы
+            let engine = document.querySelector("#modal td:nth-child(2)").innerText;
+            let transmission = document.querySelector("#modal td:nth-child(4)").innerText;
+            let drive = document.querySelector("#modal td:nth-child(6)").innerText;
+            let trim = document.querySelector("#modal td:nth-child(8)").innerText;
+            let color = document.querySelector("#modal td:nth-child(10)").innerText;
+            let vin = document.querySelector("#modal td:nth-child(12)").innerText;
+            let price = document.querySelector("#modal p:last-child").innerText;
 
-            // Формирование объекта данных
+            // Формируем объект с данными
             let data = {
                 action: 'Новая заявка',
                 Двигатель: engine,
@@ -216,7 +216,7 @@
                 Цена: price
             };
 
-            // Отправка данных
+            // Отправляем данные боту
             tg.sendData(JSON.stringify(data));
             tg.close();
         });

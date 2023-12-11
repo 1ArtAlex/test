@@ -43,6 +43,11 @@
     body.modal-open {
         overflow: hidden;
     }
+
+    #modal {
+        display: none;
+        text-align: center;
+    }
 </style>
 
 <style>
@@ -70,7 +75,7 @@
     </a>
 </div>
 
-<div>
+<div id="main">
     <div style="margin: 10px;">
         <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 10px;"
                onclick="openCarListPage('TIGGO7 PRO')">
@@ -105,18 +110,19 @@
                     <p style="padding-left: 25px; font-weight: bold;">2 570 000 Р</p>
                 </td>
                 <td style="width: 50%; padding-right: 15px; text-align: right; vertical-align: middle;">
-                    <p style="padding-left: 30px; cursor: pointer; font-size: 13px;" onclick="openModal('myModal1')">
+                    <p id="open" style="padding-left: 30px; cursor: pointer; font-size: 13px;">
                         Подробней
                         →</p>
                 </td>
             </tr>
         </table>
     </div>
+</div>
 
-
-    <div id="myModal1" class="modal">
+<div>
+    <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('myModal1')">&times;</span>
+            <span id="close" class="close">&times;</span>
             <br><br>
             <div style="margin-top: 20px;">
                 <table style="border-collapse: collapse; width: 50%; margin: auto;">
@@ -173,51 +179,25 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
+        let open = document.getElementById("open")
+        let close = document.getElementById("close");
         let order = document.getElementById("order");
         tg.expand();
 
-        order.addEventListener("click", () => {
-            let data = {
-                '@type': 'SendMessage',
-                'chat_id': 723280958,
-                'text': 'Клиент хочет купить',
-            };
+        open.addEventListener("click", () => {
+            document.getElementById("modal").style.display = "block";
+        })
 
+        close.addEventListener("click", () => {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("main").style.display = "block";
+        })
+
+        order.addEventListener("click", () => {
+            let data = {action: 'клиент хочет купить'};
             tg.sendData(JSON.stringify(data));
             tg.close();
         });
-    </script>
-
-
-    <script>
-        function openModal(modalId) {
-            var modal = document.getElementById(modalId);
-            modal.style.display = "block";
-            document.body.classList.add("modal-open");
-        }
-
-        function closeModal(modalId) {
-            var modal = document.getElementById(modalId);
-            modal.style.display = "none";
-            document.body.classList.remove("modal-open");
-
-            submitApplication();
-        }
-
-        var closeBtn = document.getElementsByClassName("close")[0];
-        closeBtn.onclick = function () {
-            closeModal('myModal1');
-        };
-
-        window.onclick = function (event) {
-            var modals = document.getElementsByClassName("modal");
-            for (var i = 0; i < modals.length; i++) {
-                if (event.target == modals[i]) {
-                    var modalId = modals[i].getAttribute("id");
-                    closeModal(modalId);
-                }
-            }
-        };
     </script>
 </div>
 

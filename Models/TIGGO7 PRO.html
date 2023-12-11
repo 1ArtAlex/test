@@ -170,6 +170,9 @@
                         <p style="text-align: center; font-weight: bold; font-size: 20px;">2 570 000 Р</p>
                     </td>
                 </table>
+                <form>
+                    <input type="text" placeholder="телефон" id="phone">
+                </form>
                 <div style="margin-top: 20px; text-align: center;">
                     <button id="order">Оставить заявку</button>
                 </div>
@@ -194,7 +197,11 @@
         })
 
         order.addEventListener("click", () => {
-            let data = {action: 'клиент хочет купить'};
+            let phone = document.getElementById("phone").value;
+            let data = {
+                phone: phone
+            }
+
             tg.sendData(JSON.stringify(data));
             tg.close();
         });

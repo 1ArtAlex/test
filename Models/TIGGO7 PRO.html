@@ -163,7 +163,7 @@
                     </td>
                     <tr>
                         <td style="text-align: left; padding: 10px;">VIN</td>
-                        <td style="text-align: left; padding: 10px;">LVVDB21B*PD****76</td>
+                        <td style="text-align: left; padding: 10px;"><p id="cars_vin">LVVDB21B*PD****76</p></td>
                     </tr>
                     <td colspan="2">
                         <p style="color: grey; text-align: center">Ваша цена с учетом всех выгод</p>
@@ -195,15 +195,11 @@
         })
 
         order.addEventListener("click", () => {
+            let vinElement  = document.getElementById("cars_vin");
+            let vin = vinElement.textContent;
+
             let data = {
-                action: 'Новая заявка',
-                Двигатель: '1.5',
-                Трансмиссия: 'Вариатор',
-                Привод: 'Передний привод',
-                Комплектация: '1.5T CVT Elite',
-                Цвет: 'Стальной серый',
-                VIN: 'LVVDB21B*PD****76',
-                Цена: '2 570 000 Р'
+                VIN: vin
             };
 
             tg.sendData(JSON.stringify(data));

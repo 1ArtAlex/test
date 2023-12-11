@@ -177,9 +177,9 @@
         tg.expand();
 
         order.addEventListener("click", () => {
+            let data = {action: 'клиент хочет купить'};
 
-            tg.sendData('клиент хочет купить');
-
+            tg.sendData(JSON.stringify(data));
             tg.close();
         });
     </script>

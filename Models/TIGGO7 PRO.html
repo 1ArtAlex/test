@@ -125,7 +125,7 @@
             <span id="close" class="close">&times;</span>
             <br><br>
             <div style="margin-top: 20px;">
-                <table id="carInfo" style="border-collapse: collapse; width: 50%; margin: auto;">
+                <table style="border-collapse: collapse; width: 50%; margin: auto;">
                     <tr>
                         <td style="text-align: left; padding: 10px;">Двигатель</td>
                         <td style="text-align: left; padding: 10px;">1.5</td>
@@ -195,28 +195,17 @@
         })
 
         order.addEventListener("click", () => {
-            // Собираем данные из таблицы
-            let engine = document.querySelector("#carInfo td:nth-child(2)").innerText;
-            let transmission = document.querySelector("#carInfo td:nth-child(4)").innerText;
-            let drive = document.querySelector("#carInfo td:nth-child(6)").innerText;
-            let trim = document.querySelector("#carInfo td:nth-child(8)").innerText;
-            let color = document.querySelector("#carInfo td:nth-child(10)").innerText;
-            let vin = document.querySelector("#carInfo td:nth-child(12)").innerText;
-            let price = document.querySelector("#carInfo p:last-child").innerText;
-
-            // Формируем объект с данными
             let data = {
                 action: 'Новая заявка',
-                engine: engine,
-                transmission: transmission,
-                drive: drive,
-                trim: trim,
-                color: color,
-                VIN: vin,
-                price: price
+                Двигатель: '1.5',
+                Трансмиссия: 'Вариатор',
+                Привод: 'Передний привод',
+                Комплектация: '1.5T CVT Elite',
+                Цвет: 'Стальной серый',
+                VIN: 'LVVDB21B*PD****76',
+                Цена: '2 570 000 Р'
             };
 
-            // Отправляем данные боту
             tg.sendData(JSON.stringify(data));
             tg.close();
         });
